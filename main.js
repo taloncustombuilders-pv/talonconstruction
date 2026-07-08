@@ -16,8 +16,9 @@ form.addEventListener("submit", async (e) => {
   statusEl.textContent = "";
   statusEl.className = "form-status";
 
-  // Honeypot: silently drop bot submissions
-  if (form.tcc_extra.value) {
+  // Honeypot: silently drop bot submissions (defensive: never crash if absent)
+  const hp = form.elements["tcc_extra"];
+  if (hp && hp.value) {
     statusEl.textContent = "Thanks — we'll be in touch.";
     statusEl.classList.add("ok");
     form.reset();
