@@ -425,3 +425,109 @@ h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); }
 @media (max-width: 640px) {
   .footer-inner { flex-direction: column; align-items: flex-start; }
 }
+
+/* ==========================================================================
+   v3 additions — expanded content sections
+   ========================================================================== */
+
+.craft-narrow { max-width: 780px; }
+.craft-narrow h2 { color: var(--navy); margin-bottom: 22px; }
+.craft-narrow p { color: #3a3a3a; }
+.craft-narrow p + p { margin-top: 16px; }
+
+.section-intro {
+  color: #3a3a3a;
+  max-width: 44em;
+  margin: 18px 0 40px;
+}
+.section-intro-light { color: rgba(244, 240, 230, 0.85); }
+
+/* ---- What we build ---- */
+.build { padding: 96px 0; background: var(--bone); }
+.build h2 { color: var(--navy); }
+.build-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 48px;
+  border-top: var(--rule);
+}
+.build-card { padding: 26px 0 28px; border-bottom: var(--rule); }
+.build-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 9px;
+}
+.build-card p { font-size: 0.92rem; color: #3a3a3a; line-height: 1.6; }
+
+/* ---- How we work ---- */
+.process { padding: 96px 0; background: var(--navy); color: var(--bone); }
+.process h2 { color: #fff; }
+.steps { list-style: none; border-top: var(--rule); }
+.steps li {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 22px;
+  padding: 26px 0;
+  border-bottom: var(--rule);
+  align-items: start;
+}
+.step-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--gold);
+  line-height: 1.2;
+}
+.steps h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 7px;
+}
+.steps p { color: rgba(244, 240, 230, 0.85); font-size: 0.95rem; max-width: 52em; }
+
+/* ---- Integrity / Local ---- */
+.integrity { padding: 96px 0 64px; background: var(--bone); }
+.local { padding: 0 0 96px; background: var(--bone); }
+.local-inner {
+  border-left: 2px solid var(--gold);
+  padding-left: 34px;
+}
+
+/* ---- Why Talon ---- */
+.why { padding: 96px 0; background: #EDE7D8; }
+.why h2 { color: var(--navy); margin-bottom: 34px; }
+.why-specs { max-width: 860px; }
+.why-specs li { grid-template-columns: 210px 1fr; }
+
+/* ---- Contact additions ---- */
+.contact-intro p + p { margin-top: 14px; }
+.form-note {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: rgba(244, 240, 230, 0.7);
+}
+.form-note a { color: var(--gold); text-decoration: none; }
+.form-note a:hover { text-decoration: underline; }
+.footer-tagline {
+  margin-top: 10px;
+  font-style: italic;
+  color: var(--stone);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 960px) {
+  .build-grid { grid-template-columns: repeat(2, 1fr); gap: 0 36px; }
+}
+@media (max-width: 640px) {
+  .build, .process, .integrity, .why { padding-top: 64px; padding-bottom: 64px; }
+  .integrity { padding-bottom: 44px; }
+  .local { padding-bottom: 64px; }
+  .build-grid { grid-template-columns: 1fr; }
+  .steps li { grid-template-columns: 44px 1fr; gap: 14px; }
+  .why-specs li { grid-template-columns: 1fr; gap: 6px; }
+  .local-inner { padding-left: 20px; }
+}
